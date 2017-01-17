@@ -2,7 +2,7 @@
 ECP Boilerplate Access API
 ========================
 ECP Boilerplate.
-* Work in progres.
+* Work in progress.
 
 Database
 -------------------

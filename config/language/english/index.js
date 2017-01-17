@@ -8,10 +8,11 @@ module.exports = {
   models: {
     emailConfirmation: 'Confirmation email',
     forgotPassword: 'Recovery token',
+    passcode: 'Passcode',
     resource: 'Resource',
     user: 'User'
   },
-  
+
   errors: errors,
   messages: messages
 };

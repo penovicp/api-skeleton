@@ -9,11 +9,8 @@ const dbArgument = () => (process.argv[3] === 'dev')
   : 'test_db';
 
 function recreateDatabase() {
-  let dbLink = process.env.DB_LINK
-    || dbArgument() === 'dev_db' ? 'ecp_dev_db' : 'ecp_test_db';
   let connectionString =
-    `postgres://postgres:ecp1950@${dbLink}/${dbArgument()}`;
-
+    `postgres://postgres:ecp1950@localhost/${dbArgument()}`;
 
   pg.connect(connectionString)
     .then( connection => {
@@ -39,10 +36,8 @@ function recreateDatabase() {
 }
 
 function cleanDatabase() {
-  let dbLink = process.env.DB_LINK
-    || dbArgument() === 'dev_db' ? 'ecp_dev_db' : 'ecp_test_db';
   let connectionString =
-    `postgres://postgres:ecp1950@${dbLink}/${dbArgument()}`;
+    `postgres://postgres:ecp1950@localhost/${dbArgument()}`;
 
   pg.connect(connectionString, (err, connection) => {
     if (err) throw err;
