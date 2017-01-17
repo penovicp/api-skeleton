@@ -5,8 +5,15 @@ const config = require('../../config');
 const resources = require('../../controllers').resources;
 const upload = require('../../middleware/upload');
 const users = require('../../controllers').users;
+const passcode = require('../../controllers').passcode;
 
 module.exports = function(router) {
+  router.route('/kukac/:userId')
+    .post(
+      passcode.validate.create,
+      passcode.create
+    );
+
   router.route('/users')
     .post(
       users.validate.create,
