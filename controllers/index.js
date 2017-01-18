@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  authentication: require('./authentication'),
-  resources: require('./resources'),
-  users: require('./users')
+    authentication: require('./authentication'),
+    resources: require('./resources'),
+    users: require('./users'),
+    passcode: require('./passcode')
 };
